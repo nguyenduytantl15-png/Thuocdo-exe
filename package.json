@@ -1,0 +1,39 @@
+{
+  "name": "thuoc-do",
+  "version": "1.0.0",
+  "description": "Thuoc Do - Ma tran, Tron de & Cham phieu trac nghiem - Nguyen Duy Tan, THCS Vinh Phuoc",
+  "author": "Nguyen Duy Tan",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "vn.thcsvinhphuoc.thuocdo",
+    "productName": "ThuocDo",
+    "files": [
+      "main.js",
+      "app/**/*"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "build/icon.png"
+    },
+    "portable": {
+      "artifactName": "ThuocDo-${version}-portable.exe"
+    },
+    "nsis": {
+      "artifactName": "ThuocDo-${version}-cai-dat.exe",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Thước Đo"
+    }
+  }
+}
